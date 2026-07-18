@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video replica</title>
+    <link rel="stylesheet" href="tvshows3.css">
+    
+
+</head>
+
+<body>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const allImages = document.querySelectorAll(".img1");
+
+    allImages.forEach(function(image){
+
+        image.addEventListener("click", function(){
+
+            const video = document.createElement("video");
+
+            video.src = "C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/vide1.mp4";
+            video.controls = true;
+            video.autoplay = true;
+
+            video.style.width = "100%";
+            video.style.height = "100%";
+            video.style.objectFit = "contain";
+            video.style.background = "black";
+
+
+            const oldImage = image;
+
+            oldImage.replaceWith(video);
+
+
+            if(video.requestFullscreen){
+                video.requestFullscreen();
+            }
+
+
+            function closeVideo(){
+
+                if(!document.fullscreenElement){
+
+                    video.replaceWith(oldImage);
+
+                    document.removeEventListener(
+                        "fullscreenchange",
+                        closeVideo
+                    );
+
+                }
+
+            }
+
+
+            document.addEventListener(
+                "fullscreenchange",
+                closeVideo
+            );
+
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+<div class="container">
+
+    <div id="box1">
+        <a id="nav-content" href="index.html" target="_self" >prime video</a>
+    </div>
+
+    <div id="box2">
+        <a class="nav-content" href="index.html" target="_self" >Home</a>
+    </div>
+
+    <div id="box3">
+        <a class="nav-content" href="movies2.html" target="_self">Movies</a>
+    </div>
+
+    <div id="box4">
+        <a class ="nav-content" href="tvshows3.html" target="_self" >TV Shows</a>
+    </div>
+
+    <div id="box5">
+        <a class="nav-content" href="livetv4.html" target="_self">Live TV</a>
+    </div>
+
+    <div id="box6">
+        <img id="qr" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/qr.png" > 
+    </div>
+
+    <div id="box7">
+        <a style="margin-left:0px;"class="nav-content" href="index.html" target="_self">Subscriptions</a>
+    </div>
+
+     <div id="box8">
+        <img id="search" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/search.png">
+    </div>
+
+    
+<div class="nav-item">
+  <div class="lang-trigger" style="font-size:20px;font-family: Arial, sans-serif;font-size: 14px;" tabindex="0">
+    EN <span class="arrow">⌵</span>
+  </div>
+  
+  <div class="lang-menu">
+    <div class="col">
+      <p>Bahasa Indonesia</p>
+      <p>English</p>
+      <p>Español</p>
+    </div>
+    <div class="col">
+      <p>Italiano</p>
+      <p>Nederlands</p>
+      <p>Polski</p>
+    </div>
+  </div>
+</div>
+
+
+
+   <div class="profile2">
+    <img class="icon2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/logo2.png" tabindex="0"> 
+    
+    <div class="menu2">
+        <div class="menu-column">
+            <p class="menu-title">GENRES</p>
+            <p>Action and adventure</p>
+            <p>Anime</p>
+            <p>Comedy</p>
+            <p>Documentary</p>
+            <p>Drama</p>
+            <p>Fantasy</p>
+            <p>Horror</p>
+            <p>Kids</p>
+        </div>
+        <div class="menu-column">
+            <p>&nbsp;</p> <p>Mystery and thrillers</p>
+            <p>Romance</p>
+            <p>Science fiction</p>
+        </div>
+        <div class="menu-divider"></div>
+        <div class="menu-column">
+            <p class="menu-title">FEATURED COLLECTIONS</p>
+            <p>Home Premiere</p>
+            <p>New Releases</p>
+            <p>MX Player</p>
+            <p>Critically acclaimed</p>
+            <p>Kids</p>
+        </div>
+    </div>
+</div>
+
+<div class="profile1">
+    <img class="icon1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/logo.png"> 
+    
+    <div class="menu1">
+        <div class="menu-header">YOUR ACCOUNT</div>
+        <p>Sign In</p>
+        <p>Help</p>
+        <p>Watch Anywhere</p>
+    </div>
+</div>
+
+    <div id="box9">
+        <a id="a1" href="index.html" target="_blank">Join Prime</a>
+    </div>
+</div>
+
+
+
+<div class="video1">
+<video class="myvideo1" autoplay muted loop controls="on">
+    <source src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/vide1.mp4" type="video/mp4" alt="video1">
+</video>
+</div>
+
+<div class="hd1">
+    <h1>Drama TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows1.png" alt="tvshows1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows2.png" alt="tvshows2">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows3.png" alt="tvshows3">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows4.png" alt="tvshows4">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows5.png" alt="tvshows5">
+</div>
+
+
+
+<div class="hd1">
+    <h1>Top TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows6.png" alt="tvshows6">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows7.png" alt="tvshows7">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows8.png" alt="tvshows8">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows9.png" alt="tvshows9">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows10.png" alt="tvshows10">
+</div>
+
+<div class="hd1">
+    <h1>Kids and family TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows11.png" alt="tvshows11">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows12.png" alt="tvshows12">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows13.png" alt="tvshows13">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows14.png" alt="tvshows14">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows15.png" alt="tvshows15">
+</div>
+
+<div class="hd1">
+    <h1>Throwback TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows16.png" alt="tvshows16">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows17.png" alt="tvshows17">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows18.png" alt="tvshows18">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows19.png"alt="tvshows19">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows20.png" alt="tvshows20">
+</div>
+
+<div class="hd1">
+    <h1>Science fiction TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows21.png" alt="tvshows21">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows22.png" alt="tvshows22">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows23.png" alt="tvshows23">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows24.png" alt="tvshows24">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows25.png" alt="tvshows25">
+</div>
+
+<div class="hd1">
+    <h1>Mystery and thriller TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows26.png" alt="tvshows26">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows27.png" alt="tvshows27">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows28.png" alt="tvshows28">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows29.png" alt="tvshows29">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows30.png" alt="tvshows30">
+</div>
+
+<div class="hd1">
+    <h1>Sports TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows31.png" alt="tvshows31">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows32.png" alt="tvshows32">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows33.png" alt="tvshows33">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows34.png" alt="tvshows34">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows35.png" alt="tvshows35">
+</div>
+
+<div class="hd1">
+    <h1>Fantasy TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows36.png" alt="tvshows36">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows37.png" alt="tvshows37">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows38.png" alt="tvshows38">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows39.png" alt="tvshows39">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows40.png" alt="tvshows40">
+</div>
+
+
+<div class="hd1">
+    <h1>Anime TV</h1>
+</div>
+
+<div class="images1">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows41.png" alt="tvshows41">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows42.png" alt="tvshows42">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows43.png" alt="tvshows43">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows44.png" alt="tvshows44">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows45.png" alt="tvshows45">
+</div>`
+
+<div class="hd1">
+    <h1>Apple TV: Most popular</h1>
+</div>
+
+<div class="images1"  style="padding-bottom: 130px;">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows46.png" alt="tvshows46">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows47.png" alt="tvshows47">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows48.png" alt="tvshows48">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows49.png" alt="tvshows49">
+    <img class="img1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/tvshows50.png" alt="tvshows50">
+</div>
+
+<div id="hero7">
+        <img id="img3"  src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/homeimage12.png" alt="homeimage12">
+        <div id="containera">
+            <a class="a11" href="index.html">Terms and Privacy Notice</a>
+            <a class="a11" href="index.html">Send us feedback Help</a>
+            <a class="a11" href="index.html"> Help</a>
+            <h2 style="font-size:15px;color:#8197A4;" class="a11 a111">© 1996-2026, Amazon.com, Inc. or its affiliates</h2>
+        </div>
+</div>
+
+
+</body>
+</html>

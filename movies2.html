@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video replica</title>
+    <link rel="stylesheet" href="movies2.css">
+    
+
+</head>
+<div class="container">
+
+    <div id="box1">
+        <a id="nav-content" href="index.html" target="_self">prime video</a>
+    </div>
+
+    <div id="box2">
+        <a class="nav-content" href="index.html" target="_self" >Home</a>
+    </div>
+
+    <div id="box3">
+        <a class="nav-content" href="movies2.html" target="_self">Movies</a>
+    </div>
+
+    <div id="box4">
+        <a class ="nav-content" href="tvshows3.html" target="_self" >TV Shows</a>
+    </div>
+
+    <div id="box5">
+        <a class="nav-content" href="livetv4.html" target="_self">Live TV</a>
+    </div>
+
+    <div id="box6">
+        <img id="qr" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/qr.png"> 
+    </div>
+
+    <div id="box7">
+        <a style="margin-left:0px;"class="nav-content" href="index.html" target="_self">Subscriptions</a>
+    </div>
+
+     <div id="box8">
+        <img id="search" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/search.png">
+    </div>
+
+    
+<div class="nav-item">
+  <div class="lang-trigger" style="font-size:20px;font-family: Arial, sans-serif;font-size: 14px;" tabindex="0">
+    EN <span class="arrow">⌵</span>
+  </div>
+  
+  <div class="lang-menu">
+    <div class="col">
+      <p>Bahasa Indonesia</p>
+      <p>English</p>
+      <p>Español</p>
+    </div>
+    <div class="col">
+      <p>Italiano</p>
+      <p>Nederlands</p>
+      <p>Polski</p>
+    </div>
+  </div>
+</div>
+
+
+
+   <div class="profile2">
+    <img class="icon2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/logo2.png" tabindex="0"> 
+    
+    <div class="menu2">
+        <div class="menu-column">
+            <p class="menu-title">GENRES</p>
+            <p>Action and adventure</p>
+            <p>Anime</p>
+            <p>Comedy</p>
+            <p>Documentary</p>
+            <p>Drama</p>
+            <p>Fantasy</p>
+            <p>Horror</p>
+            <p>Kids</p>
+        </div>
+        <div class="menu-column">
+            <p>&nbsp;</p> <p>Mystery and thrillers</p>
+            <p>Romance</p>
+            <p>Science fiction</p>
+        </div>
+        <div class="menu-divider"></div>
+        <div class="menu-column">
+            <p class="menu-title">FEATURED COLLECTIONS</p>
+            <p>Home Premiere</p>
+            <p>New Releases</p>
+            <p>MX Player</p>
+            <p>Critically acclaimed</p>
+            <p>Kids</p>
+        </div>
+    </div>
+</div>
+
+<div class="profile1">
+    <img class="icon1" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/logo.png"> 
+    
+    <div class="menu1">
+        <div class="menu-header">YOUR ACCOUNT</div>
+        <p>Sign In</p>
+        <p>Help</p>
+        <p>Watch Anywhere</p>
+    </div>
+</div>
+
+    <div id="box9">
+        <a id="a1" href="index.html" target="_blank">Join Prime</a>
+    </div>
+</div>
+
+
+<div class="video1">
+<video class="myvideo1" autoplay muted loop controls="on">
+    <source  src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/vide1.mp4" type="video/mp4" alt="video1">
+</video>
+</div>
+
+<div class="hd1">
+    <h1>Top movies</h1>
+</div>
+
+<div class="images1">
+
+    <img id="movieImage" class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movie0.png" alt="movie">
+
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movie2.png">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movie3.png">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movie4.png">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movie5.png">
+
+</div>
+
+<<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const allImages = document.querySelectorAll(".img2, .img4");
+
+    allImages.forEach(function(image){
+
+        image.addEventListener("click", function(){
+
+            const video = document.createElement("video");
+
+            video.src = "C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/vide1.mp4";
+            video.controls = true;
+            video.autoplay = true;
+
+            video.style.width = "100%";
+            video.style.height = "100%";
+            video.style.objectFit = "contain";
+            video.style.background = "black";
+
+
+            const oldImage = image;
+
+            oldImage.replaceWith(video);
+
+
+            if(video.requestFullscreen){
+                video.requestFullscreen();
+            }
+
+
+            function closeVideo(){
+
+                if(!document.fullscreenElement){
+
+                    video.replaceWith(oldImage);
+
+                    document.removeEventListener(
+                        "fullscreenchange",
+                        closeVideo
+                    );
+
+                }
+
+            }
+
+
+            document.addEventListener(
+                "fullscreenchange",
+                closeVideo
+            );
+
+
+        });
+
+    });
+
+});
+
+</script>
+
+<div class="hd1">
+     <h1>Horror movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/horrorMovie6.png" alt="horrorMovie6">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/horrorMovie7.png" alt="horrorMovie7">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/horrorMovie8.png" alt="horrorMovie8">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/horrorMovie9.png" alt="horrorMovie9">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/horrorMovie10.png" alt="horrorMovie10">
+</div>
+
+<div class="hd1">
+     <h1>Young adult movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/adultmovie11.png" alt="adultmovie11">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/adultmovie12.png" alt="adultmovie12">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/adultmovie13.png" alt="adultmovie13">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/adultmovie14.png" alt="adultmovie14">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/adultmovie15.png" alt="adultmovie15">
+</div>
+
+<div class="hd1">
+     <h1>Romance movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/romancemovie16.png" alt="romancemovie16">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/romancemovie17.png" alt="romancemovie17">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/romancemovie18.png" alt="romancemovie18">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/romancemovie19.png" alt="romancemovie19">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/romancemovie20.png" alt="romancemovie20">
+</div>
+
+<div class="hd1">
+     <h1>Feature Orignal: movies</h1>
+</div>
+
+<div class="images4">
+    <img class="img4" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/originalmovie56.png" alt="originalmovie56">
+    <img class="img4" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/originalmovie57.png"  alt="originalmovie57">
+    <img class="img4" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/originalmovie58.png"  alt="originalmovie58">
+    <img class="img4" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/originalmovie59.png"  alt="originalmovie59">
+    <img class="img4" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/originalmovie60.png"  alt="originalmovie60">
+</div>
+
+<div class="hd1">
+     <h1>Shop: Rent New Movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/rentmovie21.png" alt="rentmovie21">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/rentmovie22.png" alt="rentmovie22">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/rentmovie23.png" alt="rentmovie23">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/rentmovie24.png" alt="rentmovie24">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/rentmovie25.png" alt="rentmovie25">
+</div>
+
+<div class="hd1">
+     <h1>Movies in English</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movieenglish26.png" alt="movieenglish26">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movieenglish27.png"alt="movieenglish27">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movieenglish28.png" alt="movieenglish28">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movieenglish29.png" alt="movieenglish29">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/movieenglish30.png" alt="movieenglish30">
+</div>
+
+<div class="hd1">
+     <h1>Fantasy movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/fantasymovie31.png" alt="fantasymovie31">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/fantasymovie32.png" alt="fantasymovie32">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/fantasymovie33.png" alt="fantasymovie33">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/fantasymovie34.png" alt="fantasymovie34">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/fantasymovie35.png" alt="fantasymovie35">
+</div>
+
+<div class="hd1">
+     <h1>Action and adventure movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/actionmovie36.png" alt="actionmovie36">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/actionmovie37.png" alt="actionmovie37">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/actionmovie38.png" alt="actionmovie38">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/actionmovie39.png" alt="actionmovie39">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/actionmovie40.png" alt="actionmovie40">
+</div>
+
+<div class="hd1">
+     <h1>Comedy movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/comedymovie41.png" alt="comedymovie41">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/comedymovie42.png"  alt="comedymovie42">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/comedymovie43.png"  alt="comedymovie43">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/comedymovie44.png"  alt="comedymovie44">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/comedymovie45.png"  alt="comedymovie45">
+</div>
+
+<div class="hd1">
+     <h1>Drama movies</h1>
+</div>
+
+<div class="images1">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/latestmovie46.png" alt="latestmovie46">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/latestmovie47.png"  alt="latestmovie47">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/latestmovie48.png"  alt="latestmovie48">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/latestmovie49.png"  alt="latestmovie49">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/latestmovie50.png"  alt="latestmovie50">
+</div>
+
+<div class="hd1">
+     <h1>Latest movies</h1>
+</div>
+
+<div class="images1" style="padding-bottom: 130px;">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/dramamovie51.png" alt="dramamovie51">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/dramamovie52.png" alt="dramamovie52">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/dramamovie53.png" alt="dramamovie53">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/dramamovie54.png" alt="dramamovie54">
+    <img class="img2" src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/dramamovie55.png" alt="dramamovie55">
+</div>
+
+
+<div id="hero7">
+        <img id="img3"  src="C:/Users/venna/OneDrive/Desktop/FSD/FRONTEND/CSS/PRIME_CSS_PROJECT/photos/homeimage12.png" alt="homeimage12">
+        <div id="containera">
+            <a class="a11" href="index.html">Terms and Privacy Notice</a>
+            <a class="a11" href="index.html">Send us feedback Help</a>
+            <a class="a11" href="index.html"> Help</a>
+            <h2 style="font-size:15px;color:#8197A4;" class="a11 a111">© 1996-2026, Amazon.com, Inc. or its affiliates</h2>
+       </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
